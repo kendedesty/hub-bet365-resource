@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>一个关于 bet365 的简单笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background: #f5f9fc;
+            color: #1a2b3a;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .page-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 30px 24px 50px;
+            box-shadow: 0 8px 24px rgba(0, 40, 50, 0.04);
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b3b44;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #3f6b77;
+            border-left: 4px solid #38b2ac;
+            padding-left: 16px;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+        .hero-line {
+            background: #e0f0f2;
+            padding: 16px 20px;
+            border-radius: 18px;
+            margin-bottom: 32px;
+            font-size: 1rem;
+            color: #0b3b44;
+            border: 1px solid #c0dfe3;
+        }
+        .hero-line strong {
+            color: #1f6c73;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 32px 0;
+        }
+        .card-item {
+            background: #f4fafb;
+            border-radius: 18px;
+            padding: 20px 18px;
+            border: 1px solid #d2e6ea;
+            transition: all 0.2s ease;
+        }
+        .card-item:hover {
+            background: #f0f7f9;
+            border-color: #38b2ac;
+        }
+        .card-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #154c54;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-item h3::before {
+            content: "·";
+            font-weight: 700;
+            color: #38b2ac;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        .card-item p {
+            font-size: 0.9rem;
+            color: #2d5a63;
+            margin-top: 4px;
+        }
+        .highlight-quote {
+            background: #f9fefe;
+            border-left: 5px solid #38b2ac;
+            padding: 18px 22px;
+            margin: 28px 0;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+            color: #1a3e47;
+            box-shadow: 0 2px 6px rgba(56, 178, 172, 0.06);
+        }
+        .highlight-quote::before {
+            content: "📌 印象 · ";
+            font-weight: 600;
+            color: #38b2ac;
+            letter-spacing: 0.3px;
+        }
+        .body-text {
+            margin: 24px 0 20px;
+            font-size: 1rem;
+        }
+        .body-text p {
+            margin-bottom: 18px;
+        }
+        .link-embed {
+            display: inline;
+            color: #146b74;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #a0cfd3;
+            transition: color 0.2s;
+        }
+        .link-embed:hover {
+            color: #0e4f56;
+            text-decoration-color: #38b2ac;
+        }
+        .faq-snip {
+            margin: 32px 0 18px;
+            background: #f2f8fa;
+            border-radius: 20px;
+            padding: 20px 22px;
+            border: 1px solid #c9dfe3;
+        }
+        .faq-snip summary {
+            font-weight: 600;
+            color: #0f434c;
+            cursor: pointer;
+            padding: 4px 0;
+            font-size: 1rem;
+        }
+        .faq-snip details p {
+            margin-top: 12px;
+            color: #255761;
+            font-size: 0.95rem;
+            padding-left: 4px;
+            border-left: 2px solid #9bcbd0;
+            padding-left: 14px;
+        }
+        .visit-note {
+            margin-top: 38px;
+            padding-top: 24px;
+            border-top: 1px solid #cce2e6;
+            font-size: 0.95rem;
+            color: #1d4f59;
+            text-align: left;
+        }
+        .visit-note a {
+            color: #146b74;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #aad2d7;
+        }
+        .visit-note a:hover {
+            color: #0b4f58;
+            text-decoration-color: #38b2ac;
+        }
+        .fine-line {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #698b92;
+            text-align: center;
+            border-top: 1px solid #daeef0;
+            padding-top: 20px;
+            letter-spacing: 0.2px;
+        }
+        @media (max-width: 580px) {
+            .page-wrap {
+                padding: 20px 16px 40px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .card-item {
+                padding: 16px;
+            }
+            .highlight-quote {
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <h1>在场边，安静地观察</h1>
+        <div class="subhead">关于一个平台、节奏与选择的零散笔记</div>
+
+        <div class="hero-line">
+            <strong>bet365</strong> 这个词，在一些人那里是熟悉的名字，在另一些人那里则代表一种对节奏的偏爱。这里不打算做任何推广，只写写它背后的轮廓。
+        </div>
+
+        <div class="grid-cards">
+            <div class="card-item">
+                <h3>覆盖面</h3>
+                <p>从主流联赛到小众赛事，几乎每个时段都有可跟进的内容。对于习惯提前规划的人来说，选择空间足够。</p>
+            </div>
+            <div class="card-item">
+                <h3>界面语言</h3>
+                <p>布局偏紧凑，信息密度高，但熟悉之后会发现它把很多操作放在两步之内。深色主题对眼睛比较友好。</p>
+            </div>
+            <div class="card-item">
+                <h3>直播流</h3>
+                <p>不少场次附带视频直播，不需要额外跳转。画质稳定，延迟在可接受范围。适合一边看一边做笔记。</p>
+            </div>
+            <div class="card-item">
+                <h3>风控节奏</h3>
+                <p>对异常操作比较敏感，这也是很多长期使用者觉得“有规矩”的原因。习惯之后反而省心。</p>
+            </div>
+        </div>
+
+        <div class="body-text">
+            <p>上面这些只是表面特征。真正让我愿意花一点时间去写这篇短文的，是它背后那种稳定的逻辑——不靠花哨的弹窗、不靠过度渲染，而是靠持续地提供可预期的服务。在信息过载的年代，<strong>可预期</strong>本身就是一种稀缺品。</p>
+            <p>当然，任何工具都有它的使用场景。有人追求即时反馈，有人偏爱数据沉淀，而 <a href="https://hub-bet365.com" class="link-embed">bet365</a> 更像一个大型工具箱：你带着自己的需求进去，它给你一堆零件和一张图纸，剩下的组装工作，完全取决于你的习惯与经验。它不会替你判断，但会给你足够多的参照线。</p>
+            <p>另一个让我印象深刻的细节是它的赛事列表更新速度。几乎在官方比分变动的同时，界面就会刷新。这种敏锐度并非所有平台都能做到，尤其是当同时关注五六场不同联赛时，几秒的延迟就会打乱节奏。</p>
+        </div>
+
+        <div class="highlight-quote">
+            一位朋友说过：真正好的服务，是让你几乎感觉不到它的存在，只感觉到流畅。这句话用在 <a href="https://hub-bet365.com" class="link-embed">bet365</a> 上，我觉得挺贴切的。
+        </div>
+
+        <div class="faq-snip">
+            <details>
+                <summary>▸ 一个小问题：新手适合直接接触吗？</summary>
+                <p>没有绝对的“适合”或“不适合”。如果你看过几场球，对赔率、盘口有基础概念，那上手会快一些。如果完全零基础，建议先花半小时浏览帮助板块，或者用模拟模式熟悉流程。别急着做决定，观察本身就是一种学习。</p>
+            </details>
+        </div>
+
+        <div class="visit-note">
+            ⚡ 如果你对这个话题感兴趣，想直接浏览界面与功能，可以自行前往 <a href="https://hub-bet365.com">bet365</a>。无需注册也能查看大部分赛程与赔率变动，适合先感受一下整体气质。
+        </div>
+
+        <div class="fine-line">
+            ——— 以上内容仅为个人随笔，不构成任何建议。保持独立思考，比什么都重要。
+        </div>
+    </div>
+</body>
+</html>
